@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manager Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <img src="braitexlogo.jpg" alt="Braitex logo" class="logo" width="163" height="40">
+    <h1>Manager Dashboard</h1>
+    <button id="logoutBtn" type="button">Log out</button>
+  </header>
+
+  <main>
+    <section class="filters">
+      <label>Rep <select id="fRep">
+          <option value="">All</option>
+        </select></label>
+      <label>Company <input type="text" id="fCompany" placeholder="Search..."></label>
+      <label>Item <input type="text" id="fItem" placeholder="Search..."></label>
+      <label>Status <select id="fStatus">
+          <option value="">All</option>
+        </select></label>
+      <label>From <input type="date" id="fFrom"></label>
+      <label>To <input type="date" id="fTo"></label>
+      <button type="button" id="clearBtn">Clear</button>
+      <button type="button" id="exportPdfBtn">Export PDF</button>
+      <button type="button" id="exportXlsBtn">Export Excel</button>
+    </section>
+
+    <section class="summary">
+      <p><strong id="sCount">0</strong> records &middot; Total declined value: <strong id="sValue">R 0</strong></p>
+      <h3>By reason</h3>
+      <ul id="sReasons"></ul>
+    </section>
+
+    <div class="table-wrap">
+      <table id="tbl">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Rep</th>
+            <th>Company</th>
+            <th>Client</th>
+            <th>Contact</th>
+            <th>Item</th>
+            <th>Qty</th>
+            <th>Quoted</th>
+            <th>Target</th>
+            <th>Reason</th>
+            <th>Competitor</th>
+            <th>Rep notes</th>
+            <th>Status</th>
+            <th>Manager notes</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+  <script type="module" src="dashboard.js"></script>
+</body>
+
+</html>

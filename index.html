@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Decline Tracker - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <img src="braitexlogo.jpg" alt="Braitex logo" class="logo logo-lg" width="240" height="59">
+    <h1>Decline Tracker</h1>
+    <form id="loginForm">
+      <label>Email <input type="email" id="email" required autocomplete="username"></label>
+      <label>Password <input type="password" id="password" required autocomplete="current-password"></label>
+      <button type="submit" id="loginBtn">Log in</button>
+      <p id="msg" class="msg"></p>
+    </form>
+    <a href="#" id="resetLink">Forgot password?</a>
+  </main>
+  <script type="module" src="login.js"></script>
+</body>
+</html>

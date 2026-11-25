@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log a Decline</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <img src="braitexlogo.jpg" alt="Braitex logo" class="logo" width="163" height="40">
+    <h1>Log a Decline</h1>
+    <span>Logged in as <strong id="repName"></strong></span>
+    <button id="logoutBtn" type="button">Log out</button>
+  </header>
+
+  <main>
+    <form id="declineForm">
+      <label>Date of visit <input type="date" id="visitDate" required></label>
+      <label>Client name <input type="text" id="clientName" required></label>
+      <label>Client company <input type="text" id="clientCompany" required></label>
+      <label>Client phone <input type="tel" id="clientPhone"></label>
+      <label>Client email <input type="email" id="clientEmail"></label>
+      <label>Item <input type="text" id="item" required></label>
+      <label>Quantity <input type="number" id="quantity" min="1"></label>
+      <label>Price quoted (R) <input type="number" id="priceQuoted" min="0" step="0.01" required></label>
+      <label>Client's target price (R) <input type="number" id="targetPrice" min="0" step="0.01"></label>
+
+      <label>Reason for decline
+        <select id="reason" required>
+          <option value="">Select...</option>
+          <option>Price too high</option>
+          <option>Chose competitor</option>
+          <option>No budget</option>
+          <option>No current need</option>
+          <option>Product doesn't fit specs</option>
+          <option>Bad timing</option>
+          <option>Lead time/delivery</option>
+          <option>Quality concerns</option>
+          <option>Service/relationship</option>
+          <option>Other</option>
+        </select>
+      </label>
+
+      <div id="competitorBox" hidden>
+        <label>Competitor <input type="text" id="competitor"></label>
+        <label>Competitor price (R) <input type="number" id="competitorPrice" min="0" step="0.01"></label>
+      </div>
+
+      <label>Notes <textarea id="notes" rows="3"></textarea></label>
+      <label>Would reconsider?
+        <select id="reconsider">
+          <option value="">Not sure</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </label>
+      <label>Follow-up date <input type="date" id="followUpDate"></label>
+
+      <button type="submit" id="submitBtn">Submit</button>
+      <p id="msg"></p>
+    </form>
+
+    <h2>My submissions</h2>
+    <p><button type="button" id="exportPdfBtn">Export PDF</button> <button type="button" id="exportXlsBtn">Export
+        Excel</button></p>
+    <table id="mine">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Company</th>
+          <th>Item</th>
+          <th>Reason</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+  <script type="module" src="rep.js"></script>
+</body>
+
+</html>
